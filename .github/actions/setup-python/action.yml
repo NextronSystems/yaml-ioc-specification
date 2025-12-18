@@ -1,0 +1,20 @@
+name: 'Setup Python Environment'
+description: 'Setup Python and install dependencies'
+runs:
+  using: 'composite'
+  steps:
+    - name: Set up Python
+      uses: actions/setup-python@v6
+      with:
+        python-version: '3.13'
+
+    - name: Create virtual environment and install dependencies
+      shell: bash
+      run: |
+        python3 -m venv .venv
+        . .venv/bin/activate
+        pip install -r requirements.txt
+
+        # Set environment variables for subsequent steps
+        echo "VIRTUAL_ENV=$VIRTUAL_ENV" >> $GITHUB_ENV
+        echo "$VIRTUAL_ENV/bin" >> $GITHUB_PATH

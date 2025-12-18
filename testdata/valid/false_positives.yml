@@ -1,0 +1,24 @@
+title: Test report
+id: 047b9ad4-6ad1-439e-b64a-38dae67dede2
+references:
+    - My reference link
+date: 2025-09-09
+version: 2.0.0
+iocs:
+    files:
+        - value: '.bat$'
+          score: 70
+          type: regex
+          false_positives:
+            value: '\DisableDefender.bat'
+            type: plain
+        - value: '.cmd'
+          score: 80
+          type: plain
+          false_positives:
+            - value:
+               - '\SomeOtherFile.cmd'
+               - '\Valid.cmd'
+            - value: '\\Program Files\\.*\.cmd$'
+              type: regex
+
