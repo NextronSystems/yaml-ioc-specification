@@ -1,0 +1,25 @@
+title: Test report
+id: 047b9ad4-6ad1-439e-b64a-38dae67dede2
+references:
+    - My reference link
+date: 2025-09-09
+version: 2.0.0
+iocs:
+    files:
+        value: ':\Users\Public\Pictures\pbs'
+        score: 70
+    c2s:
+        value: 'blogs.libraryutilitis.live'
+        score: 80
+    events:
+        value: 'niiopokjdfk'
+        score: 90
+    mutexes:
+        value: 'Global\A7B8C9D0E1F2G3H4I5J6K7L8M9N0O1P2'
+        score: 50
+    named_pipes:
+        value: 'PipeExample'
+        score: 60
+    hashes:
+        value: 'e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855'
+        score: 100

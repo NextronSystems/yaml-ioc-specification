@@ -1,0 +1,43 @@
+name: Test IOC Schema
+
+on: [push, pull_request, merge_group, workflow_dispatch]
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    name: Lint Schema File
+    steps:
+    - name: Setup Python Environment
+      uses: ./.github/actions/setup-python
+
+    - name: Check JSON schema
+      run: check-jsonschema --check-metaschema yaml-ioc-schema.json
+
+  valid-iocs-check:
+    runs-on: ubuntu-latest
+    needs: lint
+    name: Test Valid IOCs
+    steps:
+    - name: Setup Python Environment
+      uses: ./.github/actions/setup-python
+
+    - name: Validate IOC files
+      run: |
+        for f in testdata/valid/*.yml; do
+          check-jsonschema --verbose --schemafile yaml-ioc-schema.json "$f" || exit $?
+        done
+
+  invalid-iocs-check:
+    runs-on: ubuntu-latest
+    needs: lint
+    name: Test Invalid IOCs
+    steps:
+    - name: Setup Python Environment
+      uses: ./.github/actions/setup-python
+
+    - name: Verify invalid IOC files fail validation
+      run: |
+        for f in testdata/invalid/*.yml; do
+          check-jsonschema --schemafile yaml-ioc-schema.json "$f" && exit 1
+        done
+        exit 0
