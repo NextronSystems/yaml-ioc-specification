@@ -13,7 +13,7 @@ runs:
       run: |
         python3 -m venv .venv
         . .venv/bin/activate
-        pip install -r requirements.txt
+        pip install -r testdata/requirements.txt
 
         # Set environment variables for subsequent steps
         echo "VIRTUAL_ENV=$VIRTUAL_ENV" >> $GITHUB_ENV
