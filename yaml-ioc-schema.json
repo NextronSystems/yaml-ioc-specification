@@ -1,6 +1,6 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "IOC rule specification 2.0.0 (2025/10/10)",
+  "title": "IOC rule specification 2.0.1 (2026-08-07)",
   "type": "object",
   "required": ["title", "id", "references", "date", "iocs", "version"],
   "properties": {
