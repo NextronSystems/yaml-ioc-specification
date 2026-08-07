@@ -53,7 +53,7 @@
     "version": {
       "type": "string",
       "description": "Version of the used IOC schema",
-      "pattern": "^\\d+(\\.\\d+){0,4}$"
+      "pattern": "^[0-9]+\\.[0-9]+\\.[0-9]+(-([0-9A-Za-z\\-]+(\\.[0-9A-Za-z\\-]+)*))?(\\+([0-9A-Za-z\\-]+(\\.[0-9A-Za-z\\-]+)*))?$"
     },
     "iocs": {
       "type": "object",
