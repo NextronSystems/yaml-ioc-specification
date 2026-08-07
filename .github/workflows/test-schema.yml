@@ -1,6 +1,11 @@
 name: Test IOC Schema
 
-on: [push, pull_request, merge_group, workflow_dispatch]
+on:
+  push:
+  pull_request:
+  merge_group:
+  workflow_dispatch:
+  workflow_call:
 
 jobs:
   lint:
