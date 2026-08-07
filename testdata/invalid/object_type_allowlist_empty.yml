@@ -1,0 +1,12 @@
+title: Test report
+id: 6c4e2b1f-3a90-4f5e-9d21-8b7c0a5e1f43
+references:
+    - My reference link
+date: 2025-09-09
+version: 2.0.0
+iocs:
+    files:
+        value: '.bat$'
+        score: 70
+        type: regex
+        object_types: []
