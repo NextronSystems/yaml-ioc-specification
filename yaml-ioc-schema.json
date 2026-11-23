@@ -1,8 +1,8 @@
 {
   "$schema": "https://json-schema.org/draft/2020-12/schema",
-  "title": "IOC rule specification 2.0.1 (2026-08-07)",
+  "title": "IOC rule specification 2.1.0 (2026-11-23)",
   "type": "object",
-  "required": ["title", "id", "references", "date", "iocs", "version"],
+  "required": ["title", "description", "id", "author", "references", "date", "tags", "iocs", "version"],
   "properties": {
     "title": {
       "type": "string",
@@ -13,6 +13,11 @@
       "type": "string",
       "description": "A short description of the rule and the malicious activity that can be detected.",
       "maxLength": 65535
+    },
+    "author": {
+      "type": "string",
+      "description": "Creator of the rule. Can be a name, nickname, or organization. Separate multiple authors with commas.",
+      "maxLength": 256
     },
     "id": {
       "type": "string",
