@@ -1,0 +1,12 @@
+title: Test report
+description: Test description
+id: 047b9ad4-6ad1-439e-b64a-38dae67dede2
+author: Jane Doe, Nextron Systems
+references:
+    - My reference link
+date: 2025-09-09
+version: 2.0.0
+iocs:
+    files:
+        value: '.bat$'
+        score: 70
